@@ -94,4 +94,4 @@ function atualizarMedias() {
 
 document.querySelector('.btn.btn-dark').addEventListener('click', adicionarMateria);
 
-obterDadosAluno;
+window.onload = obterDadosAluno; // executa as perguntas ao carregar a pagina
