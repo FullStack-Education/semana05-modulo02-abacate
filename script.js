@@ -73,6 +73,23 @@ function adicionarMateria() {
             <td>${media}</td>
         </tr>
     `
+
+        // Atualiza a média geral
+        atualizarMedias();
+
 }
+
+function atualizarMedias() {
+    let todasNotas = [];
+    let medias = document.querySelectorAll('#tbody-notas tr td:last-child');
+    medias.forEach(td => todasNotas.push(parseFloat(td.textContent)));
+    
+    let mediaGeral = calcularMedia(todasNotas);
+    document.getElementById('media-geral').textContent = mediaGeral;
+
+    let maiorMedia = Math.max(...todasNotas);
+    document.getElementById('maior-media').textContent = maiorMedia;
+}
+
 
 obterDadosAluno()
