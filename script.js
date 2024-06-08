@@ -43,8 +43,36 @@ function calcularMedia(notas) {
     return (soma / notas.length).toFixed(1);
 }
 
+// adicionar uma nova linha na tabela
+function adicionarMateria() {
+    let materia = prompt("qual o nome da materia deseja adicionar?")
+    let notas = []
+    let nota
+    let i = 0
 
+    while (i < 4) {
+        nota = parseFloat(prompt(`digite a nota ${i + 1} da materia ${materia}:`))
+        if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+            notas.push(nota)
+            i++
+        } else {
+            alert("por favor, insira um valor valido entre 0 e 10.");
+        }
+    }
 
+    let media = calcularMedia(notas)
+    let tbody = document.getElementById("tbody-notas")
+    tbody.innerHTML += 
+    `
+        <tr>
+            <td>${materia}</td>
+            <td>${notas[0]}</td>
+            <td>${notas[1]}</td>
+            <td>${notas[2]}</td>
+            <td>${notas[3]}</td>
+            <td>${media}</td>
+        </tr>
+    `
+}
 
-
-obterDadosAluno();
+obterDadosAluno()
