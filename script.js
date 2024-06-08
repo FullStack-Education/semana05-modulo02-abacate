@@ -37,4 +37,14 @@ function obterDadosAluno() {
     }
 }
 
+// calcular a media das notas
+function calcularMedia(notas) {
+    let soma = notas.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+    return (soma / notas.length).toFixed(1);
+}
+
+
+
+
+
 obterDadosAluno();
