@@ -44,7 +44,9 @@ function calcularMedia(notas) {
 }
 
 // adicionar uma nova linha na tabela
-function adicionarMateria() {
+function adicionarMateria(event) {
+    event.preventDefault(); // Arruma o bug duplo ao executar a funcao
+
     let materia = prompt("qual o nome da materia deseja adicionar?")
     let notas = []
     let nota
