@@ -92,4 +92,6 @@ function atualizarMedias() {
 }
 
 
-obterDadosAluno()
+document.querySelector('.btn.btn-dark').addEventListener('click', adicionarMateria);
+
+obterDadosAluno;
